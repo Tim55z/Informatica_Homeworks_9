@@ -1,30 +1,29 @@
 ﻿program cub;
 var 
-x, n: longint;
+x, n: int64;
 a, b: string;
 t: boolean;
 begin
   while true do begin
-    write('please enter integer value [1; 2147483647]' + a + #10 + 'N = ');  
+    write('please enter integer value [1; 1290]' + a + #10 + 'N = ');  
     x := 1;
     t := false;
     a := '';
     readln(b);
-    if longint.TryParse(b, n) and (n > 0) then begin
-      if n > 2147483647 then begin
-        write('error: "' + b + '" > 2147483647' + #10);
+    if int64.TryParse(b, n) and (n > 0) then begin
+      if n > 2097152 then begin
+        write('error: "' + b + '" > 2097152' + #10);
         a := ' again';
         t := true;
       end  
       else begin
-        while x < n do begin
-            print(sqr(x));
-            x := x + 1;
+        for x:=1 to n do begin
+            print(x*x*x);
         end;
       break;
       end
     end;
-    if not longint.TryParse(b, n) then begin
+    if not int64.TryParse(b, n) then begin
       write('error: "' + b + '" is not integer' + #10);
       a := ' again';
       t := true;
