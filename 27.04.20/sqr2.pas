@@ -1,23 +1,23 @@
-﻿program cub;
+﻿program sqr2;
 var 
 x, n: longint;
 a, b: string;
 t: boolean;
 begin
   while true do begin
-    write('please enter integer value [1; 2147483647]' + a + #10 + 'N = ');  
+    write('please enter integer value [1; 2147395599]' + a + #10 + 'N = ');  
     x := 1;
     t := false;
     a := '';
     readln(b);
     if longint.TryParse(b, n) and (n > 0) then begin
-      if n > 2147483647 then begin
-        write('error: "' + b + '" > 2147483647' + #10);
+      if n > 2147395599 then begin
+        write('error: "' + b + '" > 2147395599' + #10);
         a := ' again';
         t := true;
       end  
       else begin
-        while x < n do begin
+        while (sqr(x)) <= n do begin
             print(sqr(x));
             x := x + 1;
         end;

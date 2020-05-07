@@ -5,7 +5,7 @@ a, b: string;
 t: boolean;
 begin
   while true do begin
-    write('please enter integer value [1; 1290]' + a + #10 + 'N = ');  
+    write('please enter integer value [1; 2097152]' + a + #10 + 'N = ');  
     x := 1;
     t := false;
     a := '';
